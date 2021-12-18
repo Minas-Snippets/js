@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Tweet Factorial</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<link href="tweetfactorial.css" rel="stylesheet">
+<script type="text/javascript" src="tweetfactorial.js"></script>
+<script>
+// global variables
+    var baseNumber; 
+    var factorial; 
+    window.addEventListener('DOMContentLoaded', event => {
+        baseNumber = new BigCard();
+        factorial  = new BigCard();
+        factorial.incrDigit(0);
+    } );
+</script>
+</head>
+<body>
+<header>
+    <h1>Big Factorials</h1>
+    <p>
+        What's the biggest number <b>n</b>, so that its factorial <b>n!</b> fits in a single tweet? 
+        A tweet must not contain more than 280 characters. For the sake of simplicity, we use the
+        decimal system, i.e. digits from 0 to 9.
+    </p>
+</header>
+<main>
+    <section id="abstract">
+    </section>
+    <button onclick="nextFak()">Next</button>
+    <section id="numbers">
+        <p>
+            <b>0!</b> <b>1</b> digit(s)
+            <br>
+            <b>1</b>
+        </p>
+    </section>
+</main>
+</body>
+</html>

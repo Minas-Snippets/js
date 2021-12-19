@@ -1,4 +1,71 @@
 body { 
     background-color : purple;
     color : white;
+    font-family: Sans-Serif;
+}
+
+header {
+    position: relative;
+    text-align: center;
+    left : 10vw;
+    width : 75vw;
+}
+
+h1 {
+    font-size: 6vmin;
+}
+
+header p {
+    font-size: 4vmin;
+}
+
+#abstract {
+    font-size: 2.5vmin;
+}
+
+#button {
+    text-align: center;
+}
+
+button {
+    margin-top:3vmin;
+    height:8vmin;
+    width: 20vmin;
+    font-size: 6vmin;
+    background-color:white;
+    color:purple;
+    border-radius: 3vmin;
+    border-style: solid;
+    border-color: indigo;
+    border-width: 1vmin;
+    cursor:pointer;
+    transition-property: all;
+    transition-duration: 0.2s;
+}
+
+button.pressed {
+    background-color:indigo;
+    color:white;
+    border-color: white;
+}
+
+section {
+    position: relative;
+    word-wrap: break-word;
+    left : 10vw;
+    width : 75vw;
+}
+
+ul {
+    list-style : none; 
+}
+
+.numberHeader {
+    text-align:center;
+    font-size: 2em;
+}
+
+.faktorial {
+    background-color: blueviolet;
+    font-family: Courier;
 }

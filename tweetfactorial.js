@@ -147,7 +147,13 @@ class BigCard {
     }
     
     mult(x) { 
-        // this = this * x
+        /* this = this * x
+         * 
+         * you might find this way of multiplying two numbers rather strange. However,
+         * it is far more efficient than the intuitive way of adding x times the number
+         * this. If you're not familiar with the algorithm, try to understand it!
+         * 
+         */
         if(this.lt(x)) {
             let y = new BigCard();
             y.setN(x);
@@ -183,23 +189,33 @@ class BigCard {
 }
 
 // global functions
+function restoreButton() {
+    document.getElementsByTagName("BUTTON")[0].classList.remove("pressed");
+}
 
 function nextFak() {
+    document.getElementsByTagName("BUTTON")[0].classList.add("pressed");
     baseNumber.incr();
     factorial.mult(baseNumber);
     const p  = document.createElement("P");
+    let   q  = document.createElement("P");
+    q.classList.add("numberHeader");
     let   b  = document.createElement("B");
     b.appendChild(document.createTextNode(baseNumber.str()));
     b.appendChild(document.createTextNode("!"));
-    p.appendChild(b);
-    p.appendChild(document.createTextNode(" "));
+    q.appendChild(b);
+    q.appendChild(document.createTextNode(" "));
     b = document.createElement("B");
-    b.appendChild(document.createTextNode(factorial.n.length));
-    p.appendChild(b);
-    p.appendChild(document.createTextNode(" digits"));
-    p.appendChild(document.createElement("BR"));
+    q.appendChild(document.createTextNode(factorial.n.length));
+    q.appendChild(b);
+    q.appendChild(document.createTextNode(" digits"));
+    p.appendChild(q);
+    q = document.createElement("P");
+    q.classList.add("faktorial");
     b = document.createElement("B");
     b.appendChild(document.createTextNode(factorial.str()));
-    p.appendChild(b);
+    q.appendChild(b);
+    p.appendChild(q);
     document.getElementById("numbers").prepend(p);
+    setTimeout(restoreButton,200);
 }

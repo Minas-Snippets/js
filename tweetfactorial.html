@@ -20,20 +20,40 @@
 <header>
     <h1>Big Factorials</h1>
     <p>
-        What's the biggest number <b>n</b>, so that its factorial <b>n!</b> fits in a single tweet? 
-        A tweet must not contain more than 280 characters. For the sake of simplicity, we use the
-        decimal system, i.e. digits from 0 to 9.
+        Calculate arbitrarily big factorials, step by step.
     </p>
 </header>
 <main>
     <section id="abstract">
+        The factorial is an important function in mathematics, namely for calculating probabilities. For
+        a given natural number <b>n</b> we write the factorial of this number by adding an exclamation mark
+        to it: <b>n!</b><br>
+        It is defined as follows:<br>
+        <ul>
+            <li>0! = 1</li>
+            <li>For every <b>n&gt;0</b> : <b>n! = n(n-1)!</b>
+        </ul>
+        So we get:
+        <ul>
+            <li>1! = 1(0!) = 1 &middot; 1 = 1</li>
+            <li>2! = 2(1!) = 2 &middot; 1 = 2</li>
+            <li>3! = 3(2!) = 3 &middot; 2 = 6</li>
+            <li>4! = 4(3!) = 4 &middot; 6 = 24</li>
+            <li>5! = 5(4!) = 5 &middot; 24 = 120</li>
+        </ul>
+        and so forth. As you can see, it increases pretty fast. Try it! You might be surprised. 
     </section>
-    <button onclick="nextFak()">Next</button>
+    <section id="button">
+        <button onclick="nextFak()">+1</button>
+    </section>
     <section id="numbers">
         <p>
-            <b>0!</b> <b>1</b> digit(s)
-            <br>
-            <b>1</b>
+            <p class="numberHeader">
+                <b>0!</b> <b>1</b> digit(s)
+            </p>
+            <p class="faktorial">
+                <b>1</b>
+            </p>
         </p>
     </section>
 </main>

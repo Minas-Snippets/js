@@ -26,7 +26,7 @@ class BigCard {
     }
     
     setN(x) {
-        // convenience function
+        // convenience function, assignment operator
         this.n = [ ];
         if(x.n.length)
             x.n.forEach( d => this.n.push(d) );
@@ -36,11 +36,14 @@ class BigCard {
         
     lt(x) {
         // we need this function for arithmetics. Returns true if this.n < x, false otherwise
-        if( this.n.length < x.n.length )
+        const l0 = this.n.length;
+        const l1 = x.n.length;
+        
+        if( l0 < l1 )
             return true;
-        if( this.n.length > x.n.length )
+        if( l0 > l1 )
             return false;
-        for(let i = x.n.length - 1; i >= 0; i--) {
+        for(let i = l1 - 1; i >= 0; i--) {
             if(this.n[i] < x.n[i])
                 return true;
             if(this.n[i] > x.n[i])
@@ -136,7 +139,9 @@ class BigCard {
         for(let i = c - 1; i >= 0; i--) {
             if(this.n[i] % 2) {
                 this.n[i]--;
-                this.n[i-1] += 5;
+                if(i>0) { 
+                    this.n[i-1] += 10;
+                }
                 i++;
             } else {
                 this.n[i] /= 2;
